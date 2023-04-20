@@ -27,11 +27,13 @@ function Header({}: Props) {
           url="https://www.linkedin.com/in/larissa-baroboskin/"
           fgColor="gray"
           bgColor="transparent"
+          target="_blank"
         />
         <SocialIcon
           url="https://www.instagram.com/labaroboskin/"
           fgColor="gray"
           bgColor="transparent"
+          target="_blank"
         />
       </motion.div>
       <motion.div

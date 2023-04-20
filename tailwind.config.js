@@ -7,9 +7,9 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        "main-bg": "rgba(214,229,225,255)",
-        main: "rgba(2,139,107,255)",
-        "standard-text": "#000000",
+        "main-bg": "#fbdccb",
+        main: "#184147",
+        "standard-text": "#184147",
       },
     },
   },
