@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <div className="bg-main-bg text-standard-text h-screen snap-y snap-mandatory overflow-scroll z-0">
       <Head>
-        <title>Larissa Baroboskin's Portfolio</title>
+        <title>Larissa Baroboskin{`'`}s Portfolio</title>
       </Head>
 
       {/* Header */}
