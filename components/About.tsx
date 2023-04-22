@@ -36,17 +36,12 @@ function About({}: Props) {
           background
         </h4>
         <p className="text-base">
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatum
-          error qui obcaecati molestias sequi provident ullam sit deserunt eaque
-          placeat voluptatibus at eum officia perspiciatis consequuntur nostrum
-          soluta, laudantium tempora. Lorem ipsum dolor sit amet consectetur
-          adipisicing elit. Eligendi animi impedit perferendis eveniet
-          laboriosam? Unde, dignissimos! Velit harum quod veniam, impedit rerum
-          asperiores similique vitae voluptas delectus officia, sequi at! Lorem
-          ipsum dolor sit amet consectetur adipisicing elit. Asperiores minus
-          ducimus officia ea commodi autem ipsum doloremque sunt molestiae et
-          repudiandae quam, explicabo id eum possimus eligendi! Numquam, veniam
-          officia.
+          I am a generalist designer, based in Vancouver, with a broad range of
+          skills and knowledge across multiple areas of design and art. I am
+          versatile and adaptable, able to work on a wide variety of projects
+          and mediums. I have experience in designing characters, backgrounds,
+          2D layouts, and 3D animation, all to make sure the final product is
+          visually stunning and engaging.
         </p>
       </div>
     </motion.div>
