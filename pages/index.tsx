@@ -7,14 +7,26 @@ import About from "@/components/About";
 import Work from "@/components/Work";
 import ContactMe from "@/components/ContactMe";
 import BackToTopButton from "@/components/BackToTopButton";
+import { SetStateAction, useState } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
+  const [scrollTop, setScrollTop] = useState(0);
+
+  const handleScroll = (event: {
+    currentTarget: { scrollTop: SetStateAction<number> };
+  }) => {
+    setScrollTop(event.currentTarget.scrollTop);
+  };
+
   return (
-    <div className="bg-main-bg text-standard-text h-screen snap-y snap-mandatory overflow-scroll z-0 scroll-smooth">
+    <div
+      onScroll={handleScroll}
+      className="bg-main-bg text-standard-text h-screen snap-y snap-mandatory overflow-scroll z-0 scroll-smooth"
+    >
       <Head>
-        <title>Larissa Baroboskin{`'`}s Portfolio</title>
+        <title>{`Larissa Baroboskin's Portfolio`}</title>
       </Head>
 
       {/* Header */}
@@ -40,7 +52,11 @@ export default function Home() {
         <ContactMe />
       </section>
 
-      <BackToTopButton />
+      {scrollTop > 100 ? (
+        <BackToTopButton isVisible={true} />
+      ) : (
+        <BackToTopButton isVisible={false} />
+      )}
     </div>
   );
 }

@@ -1,29 +1,41 @@
 import React from "react";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { FaArrowDown } from "react-icons/fa";
 import Link from "next/link";
 
-type Props = {};
+type Props = { isVisible: boolean };
 
-function BackToTopButton({}: Props) {
+function BackToTopButton({ isVisible }: Props) {
+  // implement scroll logic here
+
   return (
     <Link href="#hero">
-      <motion.div
-        className="fixed bottom-10 right-10 bg-main h-12 w-12 rounded-full flex items-center justify-center opacity-90 hover:opacity-100 hover:-scale-150"
-        initial={{ scale: 0 }}
-        animate={{
-          rotate: 180,
-          scale: 1,
-          borderRadius: ["20%", "20%", "100%"],
-        }}
-        transition={{
-          type: "spring",
-          stiffness: 260,
-          damping: 20,
-        }}
-      >
-        <FaArrowDown className="fill-main-bg" />
-      </motion.div>
+      <AnimatePresence>
+        {isVisible && (
+          <motion.button
+            className="fixed bottom-10 right-10 bg-main h-12 w-12 rounded-full flex items-center justify-center opacity-100 hover:opacity-90"
+            initial={{ scale: 0 }}
+            exit={{
+              scale: 0,
+            }}
+            animate={{
+              rotate: 180,
+              scale: 1,
+              borderRadius: ["20%", "20%", "100%"],
+            }}
+            transition={{
+              type: "spring",
+              stiffness: 260,
+              damping: 20,
+              delay: 1.25,
+            }}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+          >
+            <FaArrowDown className="fill-main-bg" />
+          </motion.button>
+        )}
+      </AnimatePresence>
     </Link>
   );
 }
