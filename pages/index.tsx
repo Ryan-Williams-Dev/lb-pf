@@ -6,6 +6,7 @@ import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Work from "@/components/Work";
 import ContactMe from "@/components/ContactMe";
+import BackToTopButton from "@/components/BackToTopButton";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -38,6 +39,8 @@ export default function Home() {
       <section id="contactMe" className="snap-center">
         <ContactMe />
       </section>
+
+      <BackToTopButton />
     </div>
   );
 }
