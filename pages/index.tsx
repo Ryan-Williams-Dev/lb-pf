@@ -48,7 +48,7 @@ export default function Home() {
       </section>
 
       {/* Contact Me */}
-      <section id="contactMe" className="snap-center">
+      <section id="contactMe" className="snap-start">
         <ContactMe />
       </section>
 

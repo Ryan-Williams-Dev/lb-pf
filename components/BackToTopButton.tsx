@@ -27,7 +27,6 @@ function BackToTopButton({ isVisible }: Props) {
               type: "spring",
               stiffness: 260,
               damping: 20,
-              delay: 1.25,
             }}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
