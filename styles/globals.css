@@ -19,3 +19,7 @@
   pointer-events: none;
   z-index: 99999999;
 }
+
+.contactInput {
+  @apply outline-none bg-main/20 rounded border-b px-6 py-4 border-main/30 text-standard-text placeholder-standard-text/50 transition-all focus:border-highlight/70 focus:text-highlight hover:border-highlight/70;
+}

@@ -8,8 +8,8 @@ type Props = {};
 function Hero({}: Props) {
   const [text, count] = useTypewriter({
     words: [
-      "Hi, I'm Larissa Baroboskin",
-      "I'm a Generalist Designer from Sao Paulo",
+      "Hi, I'm Larissa!",
+      "I'm a Generalist Designer.",
       "I love to be creative!",
     ],
     loop: true,
@@ -17,7 +17,7 @@ function Hero({}: Props) {
   });
 
   return (
-    <div className="h-screen flex flex-col space-y-8 items-center justify-center text-center overflow-hidden">
+    <div className="h-screen w-screen flex flex-col space-y-8 items-center justify-center text-center overflow-hidden">
       <BackgroundCircles />
       <img
         className="relative rounded-full h-32 w-32 mx-auto object-cover"
@@ -25,11 +25,11 @@ function Hero({}: Props) {
         alt="Profile pic"
       />
       <div className="z-20">
-        <h2 className="text-sm uppercase text-gray-500 pb-2 tracking-[15px] xs:text-xs">
+        <h2 className="text-xs uppercase text-standard-text pb-2 px-4 tracking-[15px] sm:text-sm">
           Genralist Designer
         </h2>
-        <h1 className="text-5xl lg:text-6xl font-semibold px-10">
-          <span className="mr-3">{text}</span>
+        <h1 className="text-2xl sm:text-5xl lg:text-6xl font-semibold px-10">
+          <span>{text}</span>
           <Cursor cursorColor="#000000" />
         </h1>
         <div className="pt-5">

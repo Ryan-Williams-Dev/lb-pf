@@ -25,13 +25,13 @@ function Header({}: Props) {
         {/* Social Icons */}
         <SocialIcon
           url="https://www.linkedin.com/in/larissa-baroboskin/"
-          fgColor="gray"
+          fgColor="#184147"
           bgColor="transparent"
           target="_blank"
         />
         <SocialIcon
           url="https://www.instagram.com/labaroboskin/"
-          fgColor="gray"
+          fgColor="#184147"
           bgColor="transparent"
           target="_blank"
         />
@@ -55,7 +55,7 @@ function Header({}: Props) {
         <SocialIcon
           className="cursor-pointer"
           network="email"
-          fgColor="gray"
+          fgColor="#184147"
           bgColor="transparent"
         />
         <p className="uppercase hidden md:inline-flex text-sm  text-gray-400">

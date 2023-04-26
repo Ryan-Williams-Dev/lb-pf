@@ -10,6 +10,7 @@ module.exports = {
         "main-bg": "#fbdccb",
         main: "#184147",
         "standard-text": "#184147",
+        highlight: "#B7245C",
       },
     },
   },

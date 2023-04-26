@@ -13,7 +13,7 @@ function BackToTopButton({ isVisible }: Props) {
       <AnimatePresence>
         {isVisible && (
           <motion.button
-            className="fixed bottom-10 right-10 bg-main h-12 w-12 rounded-full flex items-center justify-center opacity-100 hover:opacity-90"
+            className="fixed bottom-5 right-5 md:bottom-10 md:right-10 bg-highlight h-12 w-12 rounded-full flex items-center justify-center opacity-100 hover:opacity-90"
             initial={{ scale: 0 }}
             exit={{
               scale: 0,

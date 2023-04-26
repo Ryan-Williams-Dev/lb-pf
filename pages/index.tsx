@@ -8,6 +8,7 @@ import Work from "@/components/Work";
 import ContactMe from "@/components/ContactMe";
 import BackToTopButton from "@/components/BackToTopButton";
 import { SetStateAction, useState } from "react";
+import { ToastContainer } from "react-toastify";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -57,6 +58,18 @@ export default function Home() {
       ) : (
         <BackToTopButton isVisible={false} />
       )}
+
+      <ToastContainer
+        position="bottom-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
     </div>
   );
 }
