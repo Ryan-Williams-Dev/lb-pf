@@ -24,7 +24,7 @@ export default function Home() {
   return (
     <div
       onScroll={handleScroll}
-      className="bg-main-bg text-standard-text h-screen snap-y snap-mandatory overflow-scroll z-0 scroll-smooth"
+      className="bg-main-bg text-standard-text h-screen snap-y snap-mandatory overflow-y-scroll overflow-x-hidden z-0 scroll-smooth scrollbar-thin sm:scrollbar scrollbar-track-main/20 scrollbar-thumb-highlight/80"
     >
       <Head>
         <title>{`Larissa Baroboskin's Portfolio`}</title>
