@@ -9,13 +9,19 @@ export async function getLandingPage() {
     apiVersion: "2023-05-02",
   });
 
-  client.fetch(
-    groq`*[_type === "landingPage"]{
+  const data = await client.fetch(
+    groq`*[_type == "landingPage"]{
       _id,
       _createdAt,
       name,
       "slug": slug.current,
-      "image": image.asset-->url
+      "image": image.asset->url,
+      url,
+      content
     }`
   );
+
+  console.log(data);
+
+  return data[0];
 }
