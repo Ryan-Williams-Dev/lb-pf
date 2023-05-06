@@ -2,25 +2,30 @@ import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { Cursor, useTypewriter } from "react-simple-typewriter";
 import BackgroundCircles from "./BackgroundCircles";
-import { getLandingPage } from "@/sanity/sanity-utils";
+import { client, getLandingPage } from "@/sanity/sanity-utils";
 import Image from "next/image";
 import { LandingPage } from "@/types/LandingPage";
+import imageUrlBuilder from "@sanity/image-url";
+import { SanityImageSource } from "@sanity/image-url/lib/types/types";
+
 type Props = {};
 
-function Hero({}: Props) {
-  const [text, count] = useTypewriter({
-    words: [
-      "Hi, I'm Larissa!",
-      "I'm a Generalist Designer.",
-      "I love to be creative!",
-    ],
-    loop: true,
-    delaySpeed: 2000,
-  });
+const builder = imageUrlBuilder(client);
 
+function urlFor(source: SanityImageSource) {
+  return builder.image(source);
+}
+
+function Hero({}: Props) {
   const [landingPageData, setLandingPageData] = useState<LandingPage | null>(
     null
   );
+
+  const [text, count] = useTypewriter({
+    words: landingPageData ? landingPageData.typewriter : [""],
+    loop: true,
+    delaySpeed: 2000,
+  });
 
   useEffect(() => {
     async function getLandingPageData() {
@@ -40,7 +45,11 @@ function Hero({}: Props) {
         <Image
           className="relative rounded-full h-32 w-32 mx-auto object-cover"
           // src="https://scontent-sea1-1.xx.fbcdn.net/v/t1.6435-9/59856227_2321474997918942_2071388290782593024_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=8Rje5pPND3YAX9OrxlM&_nc_ht=scontent-sea1-1.xx&oh=00_AfCLoaXanC3sjczccpt6RoE6z-fgxzlIGkYASWfhfzpnJQ&oe=6468DFA3"
-          src={`${landingPageData.image}?h=128&w=128`}
+          src={urlFor(landingPageData.image)
+            .width(300)
+            .height(300)
+            .fit("max")
+            .url()}
           alt="Profile pic"
           height={128}
           width={128}

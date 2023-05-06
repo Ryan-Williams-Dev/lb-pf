@@ -7,5 +7,6 @@ export type LandingPage = {
   slug: string;
   image: string;
   url: string;
+  typewriter: string[];
   content: PortableTextBlock[];
 };

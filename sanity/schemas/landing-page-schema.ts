@@ -19,6 +19,12 @@ const landingPage = {
       type: "image",
       options: { hotspot: true },
     },
+    {
+      name: "typewriter",
+      title: "Typewriter Lines",
+      type: "array",
+      of: [{ type: "string" }],
+    },
   ],
 };
 
