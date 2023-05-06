@@ -40,7 +40,7 @@ function Hero({}: Props) {
         <Image
           className="relative rounded-full h-32 w-32 mx-auto object-cover"
           // src="https://scontent-sea1-1.xx.fbcdn.net/v/t1.6435-9/59856227_2321474997918942_2071388290782593024_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=8Rje5pPND3YAX9OrxlM&_nc_ht=scontent-sea1-1.xx&oh=00_AfCLoaXanC3sjczccpt6RoE6z-fgxzlIGkYASWfhfzpnJQ&oe=6468DFA3"
-          src={landingPageData.image}
+          src={`${landingPageData.image}?h=128&w=128`}
           alt="Profile pic"
           height={128}
           width={128}
