@@ -20,6 +20,11 @@ const landingPage = {
       options: { hotspot: true },
     },
     {
+      name: "jobTitle",
+      title: "Job Title",
+      type: "string",
+    },
+    {
       name: "typewriter",
       title: "Typewriter Lines",
       type: "array",

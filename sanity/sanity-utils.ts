@@ -16,6 +16,7 @@ export async function getLandingPage() {
       name,
       "slug": slug.current,
       "image": image.asset,
+      jobTitle,
       url,
       typewriter,
       content
