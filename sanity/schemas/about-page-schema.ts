@@ -20,15 +20,24 @@ const aboutPage = {
       options: { hotspot: true },
     },
     {
-      name: "jobTitle",
-      title: "Job Title",
+      name: "headerPreLine",
+      title: "Text before underline",
       type: "string",
     },
     {
-      name: "typewriter",
-      title: "Typewriter Lines",
-      type: "array",
-      of: [{ type: "string" }],
+      name: "headerUnderlined",
+      title: "Unerlined Text",
+      type: "string",
+    },
+    {
+      name: "headerPostLine",
+      title: "Text after underline",
+      type: "string",
+    },
+    {
+      name: "bio",
+      title: "Bio",
+      type: "text",
     },
   ],
 };

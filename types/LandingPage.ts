@@ -1,5 +1,3 @@
-import { PortableTextBlock } from "sanity";
-
 export type LandingPage = {
   _id: string;
   _createdAt: Date;
@@ -9,5 +7,4 @@ export type LandingPage = {
   jobTitle: string;
   url: string;
   typewriter: string[];
-  content: PortableTextBlock[];
 };

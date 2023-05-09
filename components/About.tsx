@@ -1,9 +1,31 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import { getAboutPage, urlFor } from "@/sanity/sanity-utils";
+import { AboutPage } from "@/types/AboutPage";
+import Loading from "./Loading";
 
 type Props = {};
 
 function About({}: Props) {
+  const [aboutPageData, setAboutPageData] = useState<AboutPage | null>(null);
+
+  useEffect(() => {
+    async function getAboutPageData() {
+      const data = await getAboutPage();
+      setAboutPageData({ ...data });
+    }
+
+    getAboutPageData();
+  }, []);
+
+  if (!aboutPageData) {
+    return (
+      <div className="h-screen w-screen flex flex-col space-y-8 items-center justify-center text-center overflow-hidden">
+        <Loading />
+      </div>
+    );
+  }
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -28,22 +50,17 @@ function About({}: Props) {
           opacity: 1,
         }}
         viewport={{ once: true }}
-        src="https://scontent-sea1-1.xx.fbcdn.net/v/t1.6435-9/59856227_2321474997918942_2071388290782593024_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=8Rje5pPND3YAX9OrxlM&_nc_ht=scontent-sea1-1.xx&oh=00_AfCLoaXanC3sjczccpt6RoE6z-fgxzlIGkYASWfhfzpnJQ&oe=6468DFA3"
+        src={urlFor(aboutPageData.image).url()}
       />
       <div className="space-y-10 px-0 md:px-10">
         <h4 className="text-4xl font-semibold">
-          Here is a{" "}
-          <span className="underline decoration-highlight/50">little</span>{" "}
-          background
+          {aboutPageData.headerPreLine}{" "}
+          <span className="underline decoration-highlight/50">
+            {aboutPageData.headerUnderlined}
+          </span>{" "}
+          {aboutPageData.headerPostLine}
         </h4>
-        <p className="text-base">
-          I am a generalist designer, based in Vancouver, with a broad range of
-          skills and knowledge across multiple areas of design and art. I am
-          versatile and adaptable, able to work on a wide variety of projects
-          and mediums. I have experience in designing characters, backgrounds,
-          2D layouts, and 3D animation, all to make sure the final product is
-          visually stunning and engaging.
-        </p>
+        <p className="text-base">{aboutPageData.bio}</p>
       </div>
     </motion.div>
   );
