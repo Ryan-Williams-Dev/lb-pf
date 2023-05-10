@@ -1,10 +1,41 @@
 import { SocialIcon } from "react-social-icons";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { useEffect, useState } from "react";
+import { Header } from "@/types/Header";
+import { getHeader } from "@/sanity/sanity-utils";
+import Loading from "./Loading";
 
 type Props = {};
 
 function Header({}: Props) {
+  const [headerData, setHeaderData] = useState<Header | null>(null);
+
+  useEffect(() => {
+    async function getHeaderData() {
+      const data = await getHeader();
+      setHeaderData(data);
+    }
+
+    getHeaderData();
+  }, []);
+
+  if (!headerData) {
+    return <></>;
+  }
+
+  const socials = headerData.socialLinks.map((urlString, i) => {
+    return (
+      <SocialIcon
+        key={i}
+        url={urlString}
+        fgColor="#184147"
+        bgColor="transparent"
+        target="_blank"
+      />
+    );
+  });
+
   return (
     <header className="sticky top-0 p-5 flex items-start justify-between max-w-7xl mx-auto z-20 xl:items-center">
       <motion.div
@@ -24,18 +55,7 @@ function Header({}: Props) {
         className="flex flex-row items-center"
       >
         {/* Social Icons */}
-        <SocialIcon
-          url="https://www.linkedin.com/in/larissa-baroboskin/"
-          fgColor="#184147"
-          bgColor="transparent"
-          target="_blank"
-        />
-        <SocialIcon
-          url="https://www.instagram.com/labaroboskin/"
-          fgColor="#184147"
-          bgColor="transparent"
-          target="_blank"
-        />
+        {socials}
       </motion.div>
 
       <motion.div

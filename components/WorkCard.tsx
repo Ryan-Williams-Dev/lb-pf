@@ -27,7 +27,16 @@ function WorkCard({}: Props) {
         overflow-hidden
       `}
     >
-      Work
+      <h2>2D Work</h2>
+      <p>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facilis
+        doloribus illum, debitis eaque deleniti nobis beatae autem maxime ex
+        exercitationem fugiat fuga est sapiente quam quod. Asperiores maxime
+        quod perferendis?
+      </p>
+      <div>
+        <img src="https://cdnb.artstation.com/p/assets/images/images/038/682/967/large/larissa-baroboskin-shooter-girl.jpg?1623770894" />
+      </div>
     </article>
   );
 }

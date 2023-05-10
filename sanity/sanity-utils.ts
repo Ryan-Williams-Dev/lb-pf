@@ -52,3 +52,19 @@ export async function getAboutPage() {
 
   return data[0];
 }
+
+export async function getHeader() {
+  const data = await client.fetch(
+    groq`*[_type == "header"]{
+      _id,
+      _createdAt,
+      name,
+      "slug": slug.current,
+      "image": image.asset,
+      socialLinks,
+      url,
+    }`
+  );
+
+  return data[0];
+}
