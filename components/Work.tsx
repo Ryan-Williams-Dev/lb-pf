@@ -17,10 +17,12 @@ function Work({}: Props) {
       </h3>
 
       <div className="w-full flex space-x-5 overflow-x-scroll p-10 snap-x snap-mandatory scrollbar-thin scrollbar-track-main/20 scrollbar-thumb-highlight/80">
-        <WorkCard />
-        <WorkCard />
-        <WorkCard />
-        <WorkCard />
+        <WorkCard id="1" />
+        <WorkCard id="2" />
+        <WorkCard id="3" />
+        <WorkCard id="4" />
+        <WorkCard id="5" />
+        <WorkCard id="6" />
       </div>
     </motion.div>
   );
